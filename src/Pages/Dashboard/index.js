@@ -1,7 +1,6 @@
 import { ShoppingCartOutlined, DollarCircleOutlined, UserOutlined, ShoppingOutlined
   } from "@ant-design/icons";
 import { Card, Space, Statistic, Table, Typography } from "antd";
-import FormList from "antd/es/form/FormList";
 import { useEffect, useState, } from "react";
 import { getCustomers, getInventory, getOrders, getRevenue } from "../../API";
 import {
@@ -43,6 +42,8 @@ getCustomers().then(res=>{
   setCustomers(res.total);
 })
 }, [])
+
+
 
     return ( 
     <div>
@@ -113,6 +114,7 @@ return (
   );
 }
 
+
 function DashboardChart() {
   const [revenueData, setReveneuData] = useState({
     labels: [],
@@ -139,6 +141,8 @@ function DashboardChart() {
         ],
       };
 
+ 
+
       setReveneuData(dataSource);
     });
   }, []);
@@ -157,9 +161,14 @@ function DashboardChart() {
   };
 
   return (
+    <div className="DashChart">
     <Card style={{ width: 500, height: 250 }}>
       <Bar options={options} data={revenueData} />
     </Card>
+    </div>
   );
 }
+
+
+
 export default Dashboard;

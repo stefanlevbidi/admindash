@@ -1,3 +1,4 @@
+
 .App{
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ border-top: 1px solid rgba(0,0, 0, 0.15);
 }
 
 .SideMenuAndPageContent{
+  overflow: scroll;
   display: flex;
   flex: 1;
   justify-content: flex-start;
@@ -37,6 +39,20 @@ height: 100%;
 .SideMenuVertical {
   height: 100%;
 }
+
 .PageContent{
 padding-left: 12px;
+}
+
+@media  (max-width:768px) {
+
+  .SideMenuAndPageContent{
+
+    display: grid;
+
+padding-inline: 20px;
+
+  }
+
+
 }
